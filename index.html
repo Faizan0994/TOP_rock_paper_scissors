@@ -9,14 +9,28 @@
     <h1 style="text-align: center;">Rock Paper Scissors Game</h1>
     <script>
         //Take users case insensitive input
+        let UserChoice = prompt("Choose rock, paper, or scissors");
+        UserChoice = UserChoice.toLowerCase();
+        
         //Declare a computer's choice funciton
-        //make a variable to store computer's choice
-        //choose a random number from 1,2,3
-        //If number is 1, choice is rock
-        //If number is 2, choice is paper
-        //If number is 3, choice is scissors
-        //Store choice string in computer's choice variable
-        //Return computer's choice as a string
+        function ComputersTurn() {
+            //make a variable to store computer's choice
+            let ComputerChoice = Math.floor(Math.random() * 3) + 1;       //choose a random number from 1,2,3
+            //If number is 1, choice is rock
+            if(ComputerChoice === 1) {
+                ComputerChoice = 'rock';
+            }
+            //If number is 2, choice is paper
+            else if(ComputerChoice === 2) {
+                ComputerChoice = 'paper';
+            }
+            //If number is 3, choice is scissors
+            else {
+                ComputerChoice = 'scissors'
+            }
+            //Return computer's choice as a string
+            return ComputerChoice;
+        }
         //Declare a function "game"
         //Take parameters of user's choice and computer's choice
         //Compare computer and user's choice
