@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock paper scissors game</title>
+    </head>
+<body>
+    <h1 style="text-align: center;">Rock Paper Scissors Game</h1>
+
+    <script>
+        MainLoop: {
+        while (true) {
+
+        //Take users case insensitive input
+        let UserChoice = prompt("Choose rock, paper, or scissors");
+        UserChoice = UserChoice.toLowerCase();
+        
+        //Declare a computer's choice funciton
+        function ComputersTurn() {
+            //make a variable to store computer's choice
+            let ComputerChoice = Math.floor(Math.random() * 3) + 1;       //choose a random number from 1,2,3
+            //If number is 1, choice is rock
+            if(ComputerChoice === 1) {
+                ComputerChoice = 'rock';
+            }
+            //If number is 2, choice is paper
+            else if(ComputerChoice === 2) {
+                ComputerChoice = 'paper';
+            }
+            //If number is 3, choice is scissors
+            else {
+                ComputerChoice = 'scissors'
+            }
+            //Return computer's choice as a string
+            return ComputerChoice;
+        }
+
+        //Declare a function "game"
+        function game(User, Computer) {    //Take parameters of user's choice and computer's choice as User and Computer respectively
+            //Compare computer and user's choice
+            if(User === Computer){
+                alert("its a draw")
+            }
+            //rock beats scissors
+            //scissors beat paper
+            //paper beats rock
+            else if (User === 'rock'){
+                if(Computer === 'paper'){
+                    alert("paper beats rock, you lose!");
+                }
+                else {
+                    alert("rock beats scissors, you win!");
+                }
+            }
+            else if(User === 'paper'){
+                if(Computer === 'scissors'){
+                    alert("scissors beat paper, you lose!")
+                }
+                else {
+                    alert('paper beats rock, you win!')
+                }
+            }
+            else if(User === 'scissors'){
+                if(Computer === 'rock'){
+                    alert("rock beats scissors, you lose!");
+                }
+                else {
+                    alert("scissors beat paper, you win!");
+                }
+            }
+            else{
+                alert("invalid input, please check your spelling");
+                
+            }
+            
+        }
+        game(UserChoice, ComputersTurn());
+
+        //Reset the game
+        var Reset;
+        Reset = prompt("Type 'y' to play again");
+        if(Reset != 'y' && Reset != 'Y'){
+            break MainLoop;
+        }
+        }
+    }
+        
+    </script>
+</body>
+</html>
