@@ -35,14 +35,8 @@
     </div>
     <div class="footer"></div>
 
-    <!--<script>
-        MainLoop: {
-        while (true) {
+    <script> 
 
-        //Take users case insensitive input
-        let UserChoice = prompt("Choose rock, paper, or scissors");
-        UserChoice = UserChoice.toLowerCase();
-        
         //Declare a computer's choice funciton
         function ComputersTurn() {
             //make a variable to store computer's choice
@@ -62,6 +56,7 @@
             //Return computer's choice as a string
             return ComputerChoice;
         }
+
 
         //Declare a function "game"
         function game(User, Computer) {    //Take parameters of user's choice and computer's choice as User and Computer respectively
@@ -96,23 +91,31 @@
                     alert("scissors beat paper, you win!");
                 }
             }
-            else{
-                alert("invalid input, please check your spelling");
-                
-            }
             
         }
-        game(UserChoice, ComputersTurn());
+
+
+        //Take user's input 
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(buttons => buttons.addEventListener('click', () => {  //A round is played everytime user clicks a button
+            game(buttons.id, ComputersTurn());
+        }));
+        
+        
+        
+
+
+        /*game(buttons.id, ComputersTurn());
 
         //Reset the game
         var Reset;
         Reset = prompt("Type 'y' to play again");
         if(Reset != 'y' && Reset != 'Y'){
             break MainLoop;
-        }
-        }
-    }
+        }*/
         
-    </script>-->
+    
+        
+    </script>
 </body>
 </html>
