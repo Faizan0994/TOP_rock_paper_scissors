@@ -60,38 +60,43 @@
 
         //Declare a function "game"
         function game(User, Computer) {    //Take parameters of user's choice and computer's choice as User and Computer respectively
+
+            let winner;
+            console.log(`User: ${User}`);
+            console.log(`CPU: ${Computer}`);
+
             //Compare computer and user's choice
             if(User === Computer){
-                alert("its a draw")
+                winner = 'Drawn';
             }
             //rock beats scissors
             //scissors beat paper
             //paper beats rock
             else if (User === 'rock'){
                 if(Computer === 'paper'){
-                    alert("paper beats rock, you lose!");
+                    winner = 'CPU Wins';
                 }
                 else {
-                    alert("rock beats scissors, you win!");
+                    winner = 'You Win';
                 }
             }
             else if(User === 'paper'){
                 if(Computer === 'scissors'){
-                    alert("scissors beat paper, you lose!")
+                    winner = 'CPU Wins';
                 }
                 else {
-                    alert('paper beats rock, you win!')
+                    winner = 'You Win';
                 }
             }
             else if(User === 'scissors'){
                 if(Computer === 'rock'){
-                    alert("rock beats scissors, you lose!");
+                    winner = 'CPU Wins';
                 }
                 else {
-                    alert("scissors beat paper, you win!");
+                    winner = 'You Win';
                 }
             }
-            
+            console.log(winner);
         }
 
 
