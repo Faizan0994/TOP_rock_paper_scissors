@@ -62,8 +62,11 @@
         function game(User, Computer) {    //Take parameters of user's choice and computer's choice as User and Computer respectively
 
             let winner;
-            console.log(`User: ${User}`);
-            console.log(`CPU: ${Computer}`);
+            const UserChoiceDisplay = document.querySelector('#user');
+            UserChoiceDisplay.lastElementChild.textContent = User;
+            const ComputerChoiceDisplay = document.querySelector('#cpu');
+            ComputerChoiceDisplay.lastElementChild.textContent = Computer;
+            const WinnerDisplay = document.querySelector('.result .box');
 
             //Compare computer and user's choice
             if(User === Computer){
@@ -96,7 +99,8 @@
                     winner = 'You Win';
                 }
             }
-            console.log(winner);
+            WinnerDisplay.firstElementChild.textContent = winner;
+            //console.log(winner);
         }
 
 
